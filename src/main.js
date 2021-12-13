@@ -40,5 +40,9 @@ function sum(a, b, ...args) {
 const word = 'electric';
 const letters = [...word];
 console.log(letters)
+console.log(typeof obj1)
+console.log(typeof numbers1)
+console.log(Array.isArray(numbers1))
+
 
 //---------------------------------------------------------------------------------------------------------
