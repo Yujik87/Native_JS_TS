@@ -1,4 +1,5 @@
 import {UserType} from "./mutability.test";
+import {types} from "util";
 
 let user = {
     name: 'Yura',
@@ -10,3 +11,5 @@ let user = {
 function increaseAge(user: UserType) {
     user.age++
 }
+
+console.log(typeof user)
