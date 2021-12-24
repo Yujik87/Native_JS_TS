@@ -44,38 +44,41 @@ const user = {
 }
 
 //1. Создайте поверхностную копию объекта user
-let copyUser;
+let copyUser = {...user};
 
 //Проверка:
-// console.log(user===copyUser)- что должно быть в консоли?
-// console.log(user.friends===copyUser.friends)- что должно быть в консоли?
+//console.log(user===copyUser)
+//console.log(user.friends===copyUser.friends)
 
 //2. Полная (глубокая) копия объекта user
-let deepCopyUser;
+let deepCopyUser = {...user, friends: [...user.friends]};
 
 //Проверка:
-// console.log(user===deepCopyUser) - что должно быть в консоли?
-// console.log(user.friends===deepCopyUser.friends) - что должно быть в консоли?
+//console.log(user===deepCopyUser)
+//console.log(user.friends===deepCopyUser.friends)
 
 //3. Поверхностная копия массива students
-let copyStudents;
-
+let copyStudents = [...students];
+//console.log(copyStudents)
 //Проверка:
-// console.log(код проверки написать самостоятельно ) - что должно быть в консоли?
-// console.log(код проверки написать самостоятельно) - что должно быть в консоли?
+//console.log(copyStudents === students)
+//console.log(students[0] === copyStudents[0])
 
 //4*. Полная (глубокая) копия массива students (map)
-let deepCopyStudents;
-
+let deepCopyStudents = students.map(s => ({...s}));
+let deepCopyStudents2 = students.map(s => s);
+/*console.log(deepCopyStudents)
+console.log(deepCopyStudents2)
 //Проверка:
-// console.log(код проверки написать самостоятельно) - что должно быть в консоли?
-// console.log(код проверки написать самостоятельно) - что должно быть в консоли?
+console.log(students === deepCopyStudents)
+console.log(deepCopyStudents === deepCopyStudents2)
+console.log(students[0] === deepCopyStudents[0])*/
 
 // NB!!! Далее все преобразования выполняем не модифицируя исходный массив students
 // Вывод результатов - в консоль
 
 //5. Отсортируйте deepCopyStudents по алфавиту (sort)
-let sortByName;
+let sortByName = deepCopyStudents.sort((a, b) => (a.name <= b.name ? 1 : -1));
 console.log(sortByName);
 
 //5a. Отсортируйте deepCopyStudents по успеваемости(лучший идёт первым)(sort)
