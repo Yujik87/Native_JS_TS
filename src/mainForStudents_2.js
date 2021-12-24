@@ -106,39 +106,42 @@ console.log(students[0] === deepCopyStudents[0])*/
 // console.log(notMarriedStudents)
 
 //8. Сформируйте массив имён студентов (map)
-// let studentsNames = deepCopyStudents.map(st => st.name);
-// console.log(studentsNames)
+let studentsNames = deepCopyStudents.map(st => st.name);
+console.log(studentsNames)
 
 //8a. Сформируйте строку из имён студентов, разделённых
 // - пробелом (join)
 // - запятой (join)
-let nameWithSpace;
+let nameWithSpace = studentsNames.join(' ');
 console.log(nameWithSpace)
-let namesWithComma;
+let namesWithComma = studentsNames.join(',');
 console.log(namesWithComma)
 
 //9. Добавьте всем студентам свойство "isStudent" со значением true (map)
-let trueStudents;
+let trueStudents = deepCopyStudents.map(st => ({...st, isStudent: true}));
 console.log(trueStudents)
 
 //10. Nick женился. Выполните выполните соответствующие преобразование массива students (map)
-let studentsWithMarriedNick;
+let studentsWithMarriedNick = deepCopyStudents.map(st => st.name === 'Nick' ? {...st, isMarried: true} : st);
 console.log(studentsWithMarriedNick)
 
 //11. Найдите студента по имени Ann (find)
-let ann;
+let ann = deepCopyStudents.find( st => st.name === "Ann");
 console.log(ann)
 
 //12. Найдите студента с самым высоким баллом (reduce)
-let bestStudent;
+let bestStudent = deepCopyStudents.reduce((acc, el) => acc.scores > el.scores ? acc : el);
 console.log(bestStudent)
 
 //13. Найдите сумму баллов всех студентов (reduce)
 
+
 // И поднимаем руку!!!!
 
-let scoresSum;
+let scoresSum = deepCopyStudents.reduce((acc, el) => acc + el.scores, 0);
 console.log(scoresSum)
+
+
 // 14. Д.З.:
 // Напишите функцию addFriends, которая принимает параметром массив students
 // и добавляет в каждому студенту свойство "friends",
