@@ -92,22 +92,22 @@ console.log(students[0] === deepCopyStudents[0])*/
 //6a. Получите массив ("вырежьте") из трёх лучших студентов из массива deepCopyStudents (splice)
 //https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
 
-let topStudents = deepCopyStudents.splice(2,3);
-console.log(topStudents)
-console.log(deepCopyStudents)
+// let topStudents = deepCopyStudents.splice(2,3);
+// console.log(topStudents)
+// console.log(deepCopyStudents)
 
 //6b. Объедините массивы deepCopyStudents и topStudents так,
 // чтоб сохранился порядок сортировки (spread-оператор)
-let newDeepCopyStudents;
-console.log(newDeepCopyStudents)
+// let newDeepCopyStudents = [...deepCopyStudents, ...topStudents];
+// console.log(newDeepCopyStudents)
 
 //7. Сформируйте массив холостых студентов (filter)
-let notMarriedStudents;
-console.log(notMarriedStudents)
+// let notMarriedStudents = deepCopyStudents.filter(st => st.isMarried === false);
+// console.log(notMarriedStudents)
 
 //8. Сформируйте массив имён студентов (map)
-let studentsNames;
-console.log(studentsNames)
+// let studentsNames = deepCopyStudents.map(st => st.name);
+// console.log(studentsNames)
 
 //8a. Сформируйте строку из имён студентов, разделённых
 // - пробелом (join)
